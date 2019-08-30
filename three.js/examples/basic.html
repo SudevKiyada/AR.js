@@ -6,6 +6,11 @@
 <script src="../build/ar.js"></script>
 <script>THREEx.ArToolkitContext.baseURL = '../'</script>
 
+<video id="video" loop crossOrigin="anonymous" webkit-playsinline style="display:none">
+			<source src="sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
+			<source src="sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+</video>
+
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: absolute; top: 10px; width:100%; text-align: center; z-index: 1;'>
 	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - three.js camera transform
 	<br/>
@@ -118,13 +123,15 @@
 	//		add an object in the scene
 	//////////////////////////////////////////////////////////////////////////////////
 
+
+	video = document.getElementById( 'video' );
+	video.play();
+	texture = new THREE.VideoTexture( video );
+	
+	
 	// add a torus knot
-	var geometry	= new THREE.CubeGeometry(1,1,1);
-	var material	= new THREE.MeshNormalMaterial({
-		transparent : true,
-		opacity: 0.5,
-		side: THREE.DoubleSide
-	});
+	var geometry	= new THREE.BoxBufferGeometry(1,1,1);
+	var material	= new THREE.MeshLambertMaterial({color: 0xffffff, map: texture});
 	var mesh	= new THREE.Mesh( geometry, material );
 	mesh.position.y	= geometry.parameters.height/2
 	scene.add( mesh );
