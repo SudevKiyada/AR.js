@@ -127,6 +127,9 @@
 	video = document.getElementById( 'video' );
 // 	video.play();
 	texture = new THREE.VideoTexture( video );
+	texture.minFilter = THREE.LinearFilter;
+	texture.magFilter = THREE.LinearFilter;
+	texture.format = THREE.RGBFormat;
 	
 	
 	// add a torus knot
