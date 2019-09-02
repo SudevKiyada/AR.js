@@ -8,10 +8,13 @@
 <style>
 	.video-back { display: none; }
 </style>
-<video id="video" loop muted autoplay crossOrigin="anonymous" webkit-playsinline class="video-back">
+<div class="video-back">
+	<video id="video" loop muted autoplay crossOrigin="anonymous" webkit-playsinline >
 			<source src="sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
 			<source src="sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
 </video>
+</div>
+
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: absolute; top: 10px; width:100%; text-align: center; z-index: 1;'>
 	<a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - three.js camera transform
