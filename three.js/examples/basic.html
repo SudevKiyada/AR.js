@@ -134,7 +134,7 @@
 	
 	// add a torus knot
 	var geometry	= new THREE.BoxBufferGeometry(1,0.2,1);
-	var material	= new THREE.MeshLambertMaterial({map: texture});
+	var material	= new THREE.MeshBasicMaterial({map: texture});
 	var mesh	= new THREE.Mesh( geometry, material );
 	mesh.position.y	= geometry.parameters.height/2
 	scene.add( mesh );
