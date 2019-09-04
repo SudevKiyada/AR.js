@@ -6,7 +6,7 @@
 <script src="../build/ar.js"></script>
 <script>THREEx.ArToolkitContext.baseURL = '../'</script>
 <style>
-	.video-back { transform: scale(1); -webkit-transform: scale(1); }
+	.video-back { transform: scale(0); -webkit-transform: scale(0); }
 </style>
 <div class="video-back">
 	<video id="video" loop muted autoplay crossOrigin="anonymous" webkit-playsinline playsinline >
@@ -137,8 +137,8 @@
 	texture.format = THREE.RGBFormat;
 	
 	
-	// add a torus knot
-	var geometry	= new THREE.BoxBufferGeometry(1,0.2,1);
+	// add a screen for video
+	var geometry	= new THREE.PlaneBufferGeometry(1,0.5);
 	var material	= new THREE.MeshBasicMaterial({map: texture});
 	var mesh	= new THREE.Mesh( geometry, material );
 	mesh.position.y	= geometry.parameters.height/2;
